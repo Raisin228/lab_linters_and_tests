@@ -2,7 +2,8 @@ import operator
 
 
 class RPNCalculator:
-    """Класс для преобразования инфиксного выражения в RPN и вычисления результата."""
+    """Класс для преобразования инфиксного выражения в
+    RPN и вычисления результата."""
 
     def __init__(self):
         self.operators = {
@@ -39,7 +40,8 @@ class RPNCalculator:
             elif token in self.operators:
                 while (stack and stack[-1] != '(' and
                        stack[-1] in self.operators and
-                       self.operators[stack[-1]][0] >= self.operators[token][0]):
+                       self.operators[stack[-1]][0] >=
+                       self.operators[token][0]):
                     output.append(stack.pop())
                 stack.append(token)
             else:
@@ -88,7 +90,8 @@ def main():
     calc = RPNCalculator()
     while True:
         try:
-            expression = input("Введите выражение (или 'выход' для завершения): ")
+            expression = input("Введите выражение "
+                               "(или 'выход' для завершения): ")
             if expression.lower() == 'выход':
                 break
             result = calc.calculate(expression)

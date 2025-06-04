@@ -40,7 +40,7 @@ class TestRPNCalculator(unittest.TestCase):
 
     def test_unmatched_parentheses(self):
         """Тест обработки несбалансированных скобок."""
-        expression = "( 3 + 5 * 2"
+        expression = "( 3 + 5  * 2"
         with self.assertRaises(ValueError):
             self.calc.to_rpn(expression)
 
